@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:test_task_kanban/core/extensions.dart';
 import 'package:test_task_kanban/feature/home/domain/entity/task_entity.dart';
 
@@ -32,7 +33,7 @@ class TaskCard extends StatelessWidget {
               ),
             ),
             Text(
-              "${task.date}",
+              DateFormat('dd MMMM', 'RU').format(task.date),
               style: context.textTheme.h5,
             ),
             Text(

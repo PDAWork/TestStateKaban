@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:talker_bloc_logger/talker_bloc_logger_settings.dart';
 import 'package:test_task_kanban/app/app.dart';
 import 'package:test_task_kanban/core/bloc_observer.dart';
@@ -13,7 +14,7 @@ class AppRunner {
     runZonedGuarded(
       () async {
         await _initApp();
-
+       await  initializeDateFormatting('ru_RU', null);
         final deps = AppDepends();
         await deps.init(
           onError: (name, error, stackTrace) {
